@@ -13,3 +13,5 @@ HISTFILESIZE=8000
 HISTTIMEFORMAT="%d/%m/%y %T "
 
 shopt -s checkwinsize
+
+echo "Start here >>  https://$(hostname -I)"
