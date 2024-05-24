@@ -77,7 +77,8 @@ RUN a2enmod ssl \
         && a2enmod headers \
         && a2enmod rewrite \
         && a2enmod deflate \
-        && a2enmod proxy_fcgi
+        && a2enmod proxy_fcgi \
+        && a2enmod authz_core
 
 # logs should go to stdout / stderr
 ENV APACHE_LOG_DIR /var/log/apache2
