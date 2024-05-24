@@ -1,0 +1,27 @@
+
+networks:
+  omekas_docker:
+    external: true
+
+services:
+  app:
+    build:
+      context: "./app"
+      dockerfile: "Dockerfile"
+    networks:
+      omekas_docker:
+        aliases:
+          - omekas.local
+    volumes:
+      - "../:/var/www/"
+      - "./app/config/database.ini:/var/www/config/database.ini"
+      - "./app/config/local.config.php:/var/www/config/local.config.php"
+  mysql:
+    image: mariadb:10.3.25
+    volumes:
+      - "./mysql/.data:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: "omekas"
+      MYSQL_DATABASE: "omekas"
+      MYSQL_USER: "omekas"
+      MYSQL_PASSWORD: "omekas"

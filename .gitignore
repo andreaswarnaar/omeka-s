@@ -17,3 +17,6 @@
 .sass-cache
 .DS_Store
 /application/language/debug.*
+.php-cs-fixer.cache
+docker/mysql/.data
+.idea
