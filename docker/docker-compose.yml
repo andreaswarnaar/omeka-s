@@ -20,6 +20,10 @@ services:
     image: mariadb:10.3.25
     volumes:
       - "./mysql/.data:/var/lib/mysql"
+    networks:
+      omekas_docker:
+        aliases:
+          - omekas-mysql.local
     environment:
       MYSQL_ROOT_PASSWORD: "omekas"
       MYSQL_DATABASE: "omekas"
