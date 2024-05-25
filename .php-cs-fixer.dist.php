@@ -47,7 +47,8 @@ return $config
             ->exclude('files')
             ->exclude('modules')
             ->exclude('node_modules')
-            ->exclude('themes')
+            ->exclude('docker')
+            ->exclude('vendor')
             ->in(__DIR__)
     )
 ;
